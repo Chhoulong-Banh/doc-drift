@@ -13,10 +13,11 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
     "clean": "rm -rf dist",
-    "test": "tsx --test \"tests/**/*.test.ts\"",
-    "lint": "tsc -p tsconfig.json --noEmit"
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test tests/scanner.test.ts",
+    "prepack": "npm run clean && npm run build"
   },
   "keywords": [
     "github-action",
