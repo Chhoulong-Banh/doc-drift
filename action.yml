@@ -1,0 +1,19 @@
+name: 'Doc Drift MVP'
+description: 'Checks README/docs for missing scripts, missing file references, and broken internal markdown links.'
+author: 'OpenAI'
+inputs:
+  root:
+    description: 'Repository root to scan'
+    required: false
+    default: '.'
+  docs-glob:
+    description: 'Comma-separated glob patterns for markdown docs'
+    required: false
+    default: 'README.md,docs/**/*.md'
+  fail-on-warning:
+    description: 'Exit non-zero when warnings are found'
+    required: false
+    default: 'false'
+runs:
+  using: 'node20'
+  main: 'dist/cli.js'

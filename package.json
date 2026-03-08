@@ -1,0 +1,53 @@
+{
+  "name": "doc-drift",
+  "version": "0.1.0",
+  "description": "Deterministic README drift checker for JS/TS repositories",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "doc-drift": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "action.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "test": "node --import tsx --test tests/**/*.test.ts",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "github-action",
+    "readme",
+    "documentation",
+    "drift",
+    "cli"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourname/doc-drift.git"
+  },
+  "homepage": "https://github.com/yourname/doc-drift#readme",
+  "bugs": {
+    "url": "https://github.com/yourname/doc-drift/issues"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fast-glob": "^3.3.2",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2",
+    "tsx": "^4.20.3"
+  }
+}
